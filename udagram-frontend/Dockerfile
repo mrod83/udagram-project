@@ -1,7 +1,6 @@
 FROM node:12
 
 ### Build
-## FROM beevelop/ionic AS ionic
 FROM beevelop/ionic:v2021.02.1 AS ionic
 
 ## Create app directory
@@ -13,7 +12,7 @@ RUN npm ci
 ## Bundle app source
 COPY . .
 RUN ionic build
-### Run 
+### Run
 FROM nginx:alpine
 #COPY www /usr/share/nginx/html
 COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
