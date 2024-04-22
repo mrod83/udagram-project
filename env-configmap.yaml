@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: arn:aws:s3:::test-590183762636-dev
+  AWS_PROFILE: default
+  AWS_REGION: us-east-2
+  JWT_SECRET: hello
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: mjorod.cb2088ua2k0s.us-east-2.rds.amazonaws.com
+  URL: add3c8ec779eb488ebc126a1eebf2d31-943432555.us-east-2.elb.amazonaws.com
+metadata:
+  name: env-config
