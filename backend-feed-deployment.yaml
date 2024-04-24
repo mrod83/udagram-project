@@ -5,7 +5,7 @@ metadata:
     service: backend-feed
   name: backend-feed
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: backend-feed
@@ -18,6 +18,9 @@ spec:
         - image: mjorod/udagram-api-feed:latest
           name: backend-feed
           imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "100m"
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
